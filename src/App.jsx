@@ -22,7 +22,7 @@ const SPAIN_CITIES = {
 const randomProp = obj => Object.keys(obj)[(Math.random() * Object.keys(obj).length) | 0];
 
 function App() {
-  const [city, setCity] = useState(randomProp(SPAIN_CITIES));
+  const [city, setCity] = useState(randomProp(SPAIN_CITIES)+", Spain");
   const [mode, setMode] = useState(MODES.Celsius);
   const [location, setLocation] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
@@ -74,8 +74,8 @@ function App() {
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button type="submit">Change Location</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <button type="submit">Search</button>
+        {error && <p class="error">{error}</p>}
       </form>
       {location && (
         <>
@@ -103,7 +103,6 @@ function App() {
             </div>
           )}
           <img src={weatherData.condition.icon} alt={weatherData.condition.text} title={weatherData.condition.text} />
-          <p></p>
         </section>
       )}
     </main>
