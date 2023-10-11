@@ -1,9 +1,8 @@
+import { apiUrl } from '../config';
 
 export const getWeatherData = async (city) => {
-    const API_KEY = 'dc55a19ca44442c085e94324231110'
     try {
-        const API_URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=yes`
-        const response = await fetch(API_URL)
+        const response = await fetch(apiUrl(city))
 
         if (response.status !== 200) {
             console.error('Error: Could not obtain weather data')
