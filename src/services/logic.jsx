@@ -1,4 +1,4 @@
-import { apiUrl } from '../config';
+import { apiUrl } from '../config.js';
 
 export const getWeatherData = async (city) => {
     try {
