@@ -9,9 +9,9 @@ function App() {
   const [weatherData, setWeatherData] = useState(null)
 
   return (
-    <main>
-      <h1>Weather App</h1>
-      <CityForm setLocation={setLocation} setWeatherData={setWeatherData} />
+    <main className='d-flex flex-column justify-content-center mt-5'>
+      <h1 className='mb-3'>Weather App</h1>
+      <CityForm className="d-flex" setLocation={setLocation} setWeatherData={setWeatherData} />
       <Weather location={location} weatherData={weatherData} />
     </main>
   )

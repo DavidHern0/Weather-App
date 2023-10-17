@@ -4,41 +4,30 @@
   padding: 2rem;
   text-align: center;
 }
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
 
-form {
-  margin-bottom: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-
-p {
-  font-size: 16px;
+body {
+  background-image: url('./assets/background.jpg');
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
 }
 
 section {
-  border: 1px solid #ccc;
+  border: 1px solid #ebebeb;
+  background-color: #ebebeb;
   border-radius: 4px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  margin-block: 10px;
 }
 
-section img {
-  max-width: 100px;
-  margin: 10px auto;
-}
-
-p.error {
-  color: red;
+main {
+  opacity: .9;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #70c6f5;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }

@@ -1,20 +1,21 @@
 import { useState } from "react"
 import { MODES } from "../constants"
+import { Button } from "react-bootstrap";
 
 function LocationResult({ location, mode, handleChangeMode }) {
     return (
         <>
             {location && (
-                <>
-                    <button onClick={handleChangeMode}>
-                        {mode === MODES.Celsius ? 'Change to ' + MODES.Fahrenheit : 'Change to ' + MODES.Celsius}
-                    </button>
+                <div className="d-flex flex-column align-items-center">
+                    <Button onClick={handleChangeMode} variant="light" className="my-4 w-75">
+                        {mode === MODES.Celsius ? "Change to " + MODES.Fahrenheit : "Change to " + MODES.Celsius}
+                    </Button>
                     <section>
                         <h3>
                             {location.name}, {location.region}, {location.country}
                         </h3>
                     </section>
-                </>
+                </div>
             )}
         </>
     )
@@ -24,17 +25,8 @@ function WeatherResult({ weatherData, mode }) {
     return (
         <>{weatherData && (
             <section>
-                {mode === MODES.Celsius ? (
-                    <div>
-                        <p><b>Temperature:</b> {weatherData.temp_c} {MODES.Celsius}</p>
-                        <p><b>Thermal sensation:</b> {weatherData.feelslike_c} {MODES.Celsius}</p>
-                    </div>
-                ) : (
-                    <div>
-                        <p><b>Temperature:</b> {weatherData.temp_f} {MODES.Fahrenheit}</p>
-                        <p><b>Thermal sensation:</b> {weatherData.feelslike_f} {MODES.Fahrenheit}</p>
-                    </div>
-                )}
+                <p><b>Temperature:</b> {mode === MODES.Celsius ? weatherData.temp_c : weatherData.temp_f} {mode}</p>
+                <p><b>Thermal sensation:</b> {mode === MODES.Celsius ? weatherData.feelslike_c : weatherData.feelslike_f} {mode}</p>
                 <img src={weatherData.condition.icon} alt={weatherData.condition.text} title={weatherData.condition.text} />
             </section>
         )}
